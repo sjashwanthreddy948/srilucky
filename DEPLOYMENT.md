@@ -22,7 +22,7 @@ Redeploy after adding environment variables. Log in at `/admin` and configure th
 
 `npm ci`, `npm test`, and `npm run build` run in GitHub Actions. Tests cover existing-data migration, authentication, appointment validation, asynchronous database persistence across restarts, durable rate limiting, and failure when serverless storage is missing. Browser tests cover booking, the frame transition and responsive behavior.
 
-After deployment, `/api/health` must return `{"ok":true,"storage":"persistent-remote"}`. Verify owner login and a booking request, remove the test request, and confirm the saved request survives a deployment. Keep database backups enabled with the provider and restrict account access.
+After deployment run `npm run check:deployment -- https://srilucky.vercel.app`. `/api/health` must return `{"ok":true,"storage":"persistent-remote"}`. This check intentionally fails until the database is configured. Verify owner login and a booking request, remove the test request, and confirm the saved request survives a deployment. Keep database backups enabled with the provider and restrict account access.
 
 Session cookies are HttpOnly, Secure in production, and SameSite=Strict. Production APIs reject unexpected browser origins, validate requests and use parameterized SQL. Durable remote rate limits protect bookings and login across function instances. The `rate_limits` table contains hashed client identifiers, not raw IP addresses; expired rows are periodically removed.
 
