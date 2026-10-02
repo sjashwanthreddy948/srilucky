@@ -1,0 +1,381 @@
+/* Photograph and extracted frame share the same measured camera coordinates. */
+.opening.scene {
+  height: 260svh;
+  min-height: 0;
+  padding: 0;
+  overflow: visible;
+}
+.hero-stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--paper);
+}
+.hero-portrait {
+  position: absolute;
+  top: 0;
+  max-width: none;
+  will-change: transform, opacity;
+}
+.photo-repair-mask {
+  opacity: var(--photo-repair, 0);
+}
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #f1f1f2b0 0%,
+    #f1f1f23a 42%,
+    transparent 62%
+  );
+  pointer-events: none;
+}
+.hero-content {
+  position: absolute;
+  z-index: 4;
+  left: 5.3%;
+  top: 36%;
+  width: 48%;
+  will-change: transform, opacity;
+}
+.hero-content > .eyebrow {
+  margin-bottom: 25px;
+  color: #595b60;
+  font-size: 9px;
+}
+.hero-content h1 {
+  font-size: clamp(46px, 5.1vw, 100px);
+  letter-spacing: -0.065em;
+  line-height: 1.03;
+}
+.hero-content h1 span {
+  color: #73777b;
+}
+.hero-content p {
+  color: #53575b;
+  margin-top: 25px;
+  font-size: 13px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 32px;
+}
+.hero-actions .line-link {
+  font-size: 9px;
+  gap: 12px;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 35px;
+  left: 5.3%;
+  z-index: 4;
+}
+.hero-edition {
+  position: absolute;
+  bottom: 45px;
+  right: 5.3%;
+  color: #f6f6f3;
+}
+.frame-render {
+  width: 405px;
+  height: 180px;
+  max-width: none;
+  left: 0;
+  top: 0;
+  object-fit: fill;
+  will-change: transform, opacity;
+  --frame-detail: 0;
+  --lens-strength: 0.06;
+  --depth-shadow: 0px;
+  filter: drop-shadow(0 var(--depth-shadow) 8px #11111125);
+}
+.frame-artwork {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.original-rims {
+  opacity: calc(1 - var(--frame-detail));
+}
+.detail-rims {
+  opacity: var(--frame-detail);
+}
+.lens-reflection {
+  opacity: var(--lens-strength);
+}
+.lens-streak {
+  transform: translate3d(var(--lens-shift, 0px), 0, 0);
+}
+.on-dark .frame-render {
+  filter: drop-shadow(0 1px 1px #ffffff38) drop-shadow(0 12px 16px #0008);
+}
+.header-whatsapp {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+}
+.site-header nav {
+  gap: 25px;
+  margin-left: 0;
+}
+.header-book {
+  gap: 16px;
+}
+.header-actions {
+  gap: 10px;
+}
+.world .scene-copy {
+  top: 31%;
+}
+.through::after {
+  content: "";
+  position: absolute;
+  width: 54vw;
+  height: 22vw;
+  border: 1px solid #b8bbb526;
+  border-radius: 100%;
+  top: 35%;
+  left: 23%;
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+.booking-scene.scene {
+  min-height: 1000px;
+  height: 125svh;
+}
+.booking-scene .visit-heading {
+  top: 23%;
+  left: 5.3%;
+  right: auto;
+  text-align: left;
+  width: 48%;
+}
+.booking-scene .visit-heading h2 {
+  font-size: clamp(55px, 6.1vw, 112px);
+}
+.inline-booking {
+  position: absolute;
+  z-index: 5;
+  width: 36%;
+  right: 7%;
+  top: 23%;
+}
+.inline-booking .booking > .eyebrow {
+  display: none;
+}
+.inline-booking .booking > p {
+  margin-bottom: 24px;
+}
+.inline-booking .booking form {
+  margin-top: 0;
+}
+.inline-booking .booking input,
+.inline-booking .booking select,
+.inline-booking .booking textarea {
+  background: #f6f6f3e8;
+}
+.inline-booking .booking h2 {
+  font-size: 54px;
+}
+.inline-booking .booking .button {
+  min-height: 48px;
+}
+.store-information > .line-link {
+  margin-top: 22px;
+}
+.final .final-title h2 {
+  font-size: clamp(66px, 8.4vw, 150px);
+}
+@media (max-width: 1100px) {
+  .site-header nav {
+    gap: 17px;
+  }
+  .hero-content {
+    top: 34%;
+    width: 49%;
+  }
+  .hero-content h1 {
+    font-size: 5.3vw;
+  }
+  .booking-scene .visit-heading h2 {
+    font-size: 6vw;
+  }
+  .inline-booking {
+    width: 43%;
+    right: 5.3%;
+  }
+}
+@media (min-width: 700px) and (max-width: 850px) {
+  .hero-content {
+    width: 44%;
+    top: 46%;
+  }
+  .hero-content h1 {
+    font-size: 5.4vw;
+  }
+  .hero-shade {
+    background: linear-gradient(
+      90deg,
+      #f1f1f2eb 0%,
+      #f1f1f23a 46%,
+      transparent 70%
+    );
+  }
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+@media (max-width: 699px) {
+  .opening.scene {
+    height: 240svh;
+    min-height: 0;
+  }
+  .hero-content {
+    top: auto;
+    bottom: 12%;
+    left: 6%;
+    width: 88%;
+    color: white;
+  }
+  .hero-content > .eyebrow {
+    color: #ffffffa0;
+    margin-bottom: 16px;
+    font-size: 8px;
+  }
+  .hero-content h1 {
+    font-size: clamp(34px, 8.8vw, 60px);
+    line-height: 1;
+  }
+  .hero-content h1 span {
+    color: #d6d8d9;
+  }
+  .hero-content p {
+    font-size: 11px;
+    margin-top: 17px;
+    line-height: 1.7;
+    color: #ffffffc2;
+    max-width: 310px;
+  }
+  .desktop-break {
+    display: none;
+  }
+  .hero-shade {
+    background: linear-gradient(
+      180deg,
+      transparent 40%,
+      #080a0b22 48%,
+      #080a0bd9 70%,
+      #080a0bf5 100%
+    );
+  }
+  .hero-actions {
+    margin-top: 21px;
+    gap: 24px;
+  }
+  .hero-actions .button {
+    background: #f6f6f3;
+    color: #17181b;
+    min-height: 47px;
+    padding: 15px 18px;
+    font-size: 9px;
+  }
+  .hero-actions .line-link {
+    color: white;
+  }
+  .hero-scroll {
+    bottom: 80px;
+    left: 6%;
+    color: #ffffff8a;
+    font-size: 7px;
+  }
+  .hero-scroll > span {
+    width: 24px;
+    height: 24px;
+    border-color: #ffffff40;
+  }
+  .hero-edition {
+    display: none;
+  }
+  .header-whatsapp {
+    display: none;
+  }
+  .frame-render {
+    width: 405px;
+    height: 180px;
+  }
+  .booking-scene.scene {
+    min-height: 1150px;
+    height: auto;
+    padding-bottom: 100px;
+  }
+  .booking-scene .visit-heading {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    text-align: left;
+    margin-top: 200px;
+  }
+  .booking-scene .visit-heading h2 {
+    font-size: 11.1vw;
+  }
+  .booking-scene .visit-heading .eyebrow {
+    font-size: 7px;
+    margin-bottom: 20px;
+  }
+  .inline-booking {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin-top: 240px;
+  }
+  .inline-booking .booking .form-grid {
+    gap: 19px 15px;
+  }
+  .inline-booking .booking input,
+  .inline-booking .booking select {
+    min-height: 44px;
+  }
+  .inline-booking .booking form > small {
+    font-size: 10px;
+  }
+  .booking-scene .scene-bottom {
+    display: none;
+  }
+  .final .final-title h2 {
+    font-size: 11.6vw;
+  }
+}
+@media (max-width: 699px) and (max-height: 700px) {
+  .hero-content {
+    bottom: 13%;
+  }
+  .hero-content > .eyebrow {
+    display: none;
+  }
+  .hero-content p {
+    font-size: 10px;
+    margin-top: 10px;
+  }
+  .hero-actions {
+    margin-top: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .opening.scene {
+    height: 100svh;
+  }
+  .hero-content,
+  .hero-portrait,
+  .frame-render {
+    will-change: auto;
+  }
+}

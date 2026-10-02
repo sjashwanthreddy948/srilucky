@@ -8,3 +8,7 @@ data/
 coverage/
 *.log
 test-results/
+
+.vercel
+.env*
+!.env.example
